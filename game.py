@@ -19,9 +19,13 @@ pygame.init()
 screen = pygame.display.set_mode((screenx, screeny))
 screen.fill((Black))
 
+
 while True:
+     for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            quit()
     pygame.draw.line(screen, (White), (0, 0), (500, 500))
-    pygame.display.update
+    pygame.display.update()
 
 
 
