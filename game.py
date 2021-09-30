@@ -3,6 +3,8 @@ import random
 import pygame
 import time
 
+x = 0
+
 if(0 == 0):
     White = 255, 255, 255
     Black = 0, 0, 0
@@ -21,11 +23,15 @@ screen.fill((Black))
 
 
 while True:
-     for event in pygame.event.get():
+    for event in pygame.event.get():
         if event.type == pygame.QUIT:
             quit()
-    pygame.draw.line(screen, (White), (0, 0), (500, 500))
-    pygame.display.update()
+        
+    while True:
+        x = x + 10
+        pygame.draw.rect(screen, (White), (int(100), int(x)), (int(50), int(x + 10)))
+        pygame.display.update()
+        screen.fill((Black))
 
 
 
